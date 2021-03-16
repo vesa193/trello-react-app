@@ -1,7 +1,7 @@
 import axios from 'axios'
 
-const API_KEY = 'f9ed59f4979deb75280b4e170f778992'
-const SERVER_TOKEN = '692d0fe9fcd94adff3c2fde54537b03f7a7efcf91e8a46faff9287f0cff5da83'
+const API_KEY = process.env.REACT_APP_API_KEY
+const SERVER_TOKEN = process.env.REACT_APP_SERVER_TOKEN
 const baseURL = `https://api.trello.com/1`
 
 
