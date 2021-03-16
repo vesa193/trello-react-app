@@ -1,0 +1,108 @@
+.board {
+  position: relative;
+  width: 14rem;
+  height: 7rem;
+  cursor: pointer;
+  overflow: hidden;
+
+  &-action.btn {
+    position: absolute;
+    bottom: 1.5rem;
+    right: -100%;
+    pointer-events: auto;
+    transition: right .2s ease-in;
+    z-index: 1;
+
+    svg {
+      color: #000;
+    }
+  }
+
+  &:hover, &:focus {
+    .board-overlay {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: rgba($color: #000000, $alpha: .5);
+      transform: translate3d(0,0,0);
+      -webkit-transform: translate3d(0,0,0);
+      z-index: 0;
+    }
+
+    .board-action {
+      right: 1.5rem;
+    }
+  }
+
+  &-add {
+    width: 14rem;
+    height: 7rem;
+    cursor: pointer;
+
+    &:hover, &:focus {
+      .card-body {
+        background: lightgray;
+        color: var(--blue);
+      }
+    }
+
+    .card-body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: #f0f0f0;
+      cursor: pointer;
+    }
+  }
+
+  &-name {
+    font-size: var(--default-font-size) !important;
+  }
+  
+
+  &-colors {
+    &-row {
+      padding: 1rem;
+      gap: 10px;
+    }
+
+    .card {
+      position: relative;
+      display: grid;
+      place-items: center;
+      cursor: pointer;
+    }
+    
+  }
+  
+  &-color {
+    height: 50px;
+  }
+
+  .card-title {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    color: var(--white);
+    font-weight: bold;
+  }
+  
+  .card-body {
+    background-size: cover;
+    background-position: 100%;
+  }
+}
+
+.board-color {
+  svg {
+    position: relative;
+    z-index: 2;
+  }
+
+  &-overlay {
+    position: absolute;
+    top: 0; right: 0; bottom: 0; left: 0;
+    background-color: rgba($color: #000000, $alpha: .5); 
+    z-index: 1;
+  }
+}

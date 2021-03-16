@@ -1,0 +1,15 @@
+.spinner {
+  position: fixed;
+  display: grid;
+  place-items: center;
+  width: 100%;
+  height: 100%;
+  background: rgba($color: #000000, $alpha: .5);
+  top: 0; left: 0; right: 0; bottom: 0;
+  overflow: hidden;
+  z-index: 10;
+
+  &-icon {
+    color: #eee;
+  }
+}

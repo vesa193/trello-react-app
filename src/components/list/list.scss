@@ -1,0 +1,69 @@
+.card-wrapper {
+  display: grid;
+  grid-gap: 1rem;
+
+  &-overlay {
+    position: fixed;
+    top: 0; right: 0; bottom: 0; left: 0;
+    background: rgba($color: #000000, $alpha: .0);
+    z-index: 11;
+
+    &--visible {
+      opacity: 1;
+    }
+
+    &--visible {
+      opacity: 0;
+    }
+  }
+
+  &-creating {
+    position: relative;
+    z-index: 12;
+  }
+
+  textarea.form-control {
+    font-size: .8rem;
+    resize: none;
+  }
+}
+
+.list {
+  .dropdown-menu.show {
+    opacity: 1 !important;
+    pointer-events: auto !important;
+    z-index: 11;
+  }
+
+  .dropdown-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &-header {
+    .form-group {
+      margin-bottom: 0;
+    }
+    
+    textarea.form-control {
+      font-size: .8rem;
+    }
+
+    &-wrap {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      align-items: center;
+      gap: 10px;
+    }
+  }
+
+  &--visible {
+    position: relative;
+    z-index: 10;
+  }
+
+  &--hidden {
+    position: relative;
+  }
+}

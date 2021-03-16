@@ -1,0 +1,57 @@
+.boards {
+  &-wrapper {
+    nav {
+      flex-wrap: wrap;
+      justify-content: space-between;
+
+      div {
+        display: flex;
+        align-items: center;
+      }
+
+      svg {
+        margin-right: 1rem;
+      }
+
+      .btn {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+      }
+    }
+
+    &-modal-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+
+      .dropdown-menu.show {
+        top: 100% !important;
+        opacity: 1 !important;
+        pointer-events: auto !important;
+      }
+
+      .btn {
+        position: relative;
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+      }
+    }
+  }
+
+  &-row {
+    margin-top: 2rem;
+    gap: 1.5rem;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .boards {
+    &-wrapper {
+      nav {
+        row-gap: 1rem;
+      }
+    }
+  }
+}

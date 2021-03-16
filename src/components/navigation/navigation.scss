@@ -1,0 +1,18 @@
+.navigation {
+  flex: 0 0 64px;
+
+  &-logo {
+    cursor: pointer;
+  }
+  
+  &-dropdown {
+    .dropdown-item-text {
+      color: var(--gray);
+    }
+    &-header {
+      img {
+        margin-left: 1rem;
+      }
+    }
+  }
+}

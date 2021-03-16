@@ -1,0 +1,20 @@
+{
+  "extends": [
+    "wesbos"
+  ],
+  "rules": {
+    "react/prop-types": 0,
+    "react/jsx-props-no-spreading": 0,
+    "react/jsx-fragments": 0,
+    "no-use-before-define": 0,
+    "arrow-body-style": 0,
+    "prettier/prettier": 0,
+    "no-restricted-globals": 0,
+    "quotes": 0,
+    "no-shadow": 0,
+    "camelcase": "off",
+    "click-events-have-key-events": 0,
+    "jsx-a11y/click-events-have-key-events": 0,
+    "jsx-a11y/no-static-element-interactions": 0
+  }
+}

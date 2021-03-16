@@ -1,0 +1,97 @@
+// useful CSS variables
+
+:root {
+  --default-font-size: 13px;
+  --regular-font-size: 16px;
+  --bigger-font-size: 28px;
+
+  // colors
+
+  --sky: lightgray;
+  --lime: lime;
+}
+
+.App {
+  text-align: center;
+
+  &-logo {
+    height: 40vmin;
+    pointer-events: none;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App {
+  &-header {
+    background-color: #282c34;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    color: white;
+  }
+
+  &-link {
+    color: #61dafb;
+    display: none;
+  }
+}
+
+// useful classes
+
+.grid {
+  display: grid;
+}
+
+.flex {
+  &-row {
+    display: flex;
+  }
+
+  &-column {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &-centered {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &-align-items-end {
+    align-items: end;
+  }
+
+  &-flex-gap {
+    display: flex;
+    gap: 10px
+  }
+
+  &-grow-1 {
+    flex: 1 1 auto;
+  }
+
+  &-grow-0 {
+    flex: 0 0 auto;
+  }
+
+  &-gap-10 {
+    gap: 10px;
+  }
+}
+
+.overflow-x {
+  overflow-x: auto;
+
+  &-hidden {
+    overflow-x: hidden;
+  }
+}

@@ -1,0 +1,20 @@
+// Boards
+
+- Create new board
+- Delete several board
+
+// Card of the Board * heighest priority *
+
+- Create new Card
+- Delete several Card
+- Move several Card to choosed list in the Board
+
+// List of the Board
+
+- Create new list
+- Delete several list
+
+-- on the end, todo following things
+
+- Settings Profile -> page
+- inject drag and drop to list

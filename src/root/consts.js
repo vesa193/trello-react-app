@@ -1,0 +1,2 @@
+export const IS_LOADER_ACTIVE = 'IS_LOADER_ACTIVE'
+export const SET_COMMON_PROP = 'SET_COMMON_PROP'
