@@ -45,7 +45,7 @@ const Navigation = () => {
               {state?.fullName}
               <img width="30" src={`https://trello-members.s3.amazonaws.com/${state?.id}/${state?.avatarHash}/50.png`} alt=""/>
             </Dropdown.Header>
-            <Dropdown.Header>{state?.email}</Dropdown.Header>
+            {/* <Dropdown.Header>{state?.email}</Dropdown.Header> */}
             <Hr />
             <Dropdown.Item as="button">Settings Profile</Dropdown.Item>
             {/* <Dropdown.Item as="button">Another action</Dropdown.Item>
