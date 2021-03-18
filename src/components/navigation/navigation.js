@@ -1,15 +1,30 @@
 import React from 'react';
 import { useHistory } from 'react-router-dom';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { Navbar, NavDropdown, Nav, Dropdown, DropdownButton } from 'react-bootstrap';
 import trelloLogo from '../../assets/images/Trello-Logo.wine.png'
+import { getSingleBoard } from '../../pages/HomePage/action';
 import { Hr } from '../common/common';
-import './navigation.scss'
 import { navConfig } from '../../navConfig';
+import './navigation.scss'
 
 const Navigation = () => {
   const history = useHistory()
+  const currentPath = history.location.pathname
+  const dispatch = useDispatch()
   const state = useSelector(state => state.profile.profile)
+  const boards = useSelector(state => state.home.boards)
+
+  const handleSelectBoard = (id, slugName, boardName) => {
+    const slugNameArray = slugName.split('/')
+    const slug = slugNameArray[slugNameArray.length - 1]
+    localStorage.setItem('board_id', `${id}`)
+    localStorage.setItem('board_slug', `${slug}`)
+    localStorage.setItem('board_name', `${boardName}`)
+    dispatch(getSingleBoard(id, slug, boardName, () => {
+      history.push(`/board/${slug}`)
+    }))
+  }
 
   return (
   <>
@@ -24,22 +39,30 @@ const Navigation = () => {
               )
             })
           }
-          {/* <Nav.Link>Features</Nav.Link>
-          <Nav.Link>Pricing</Nav.Link>
-          <NavDropdown title="Dropdown" id="collasible-nav-dropdown">
-            <NavDropdown.Item>Action</NavDropdown.Item>
-            <NavDropdown.Item>Another action</NavDropdown.Item>
-            <NavDropdown.Item>Something</NavDropdown.Item>
-            <NavDropdown.Divider />
-            <NavDropdown.Item>Separated link</NavDropdown.Item>
-          </NavDropdown> */}
+          { currentPath.includes('/board') ?
+            <NavDropdown title="Boards" id="collasible-nav-dropdown">
+              <NavDropdown.Header>View the board</NavDropdown.Header>
+              <NavDropdown.Divider />
+                { boards?.map(b => {
+                  const splitCurrPath = currentPath.split('/')[2]
+                  const disabledItem = b.url.endsWith(splitCurrPath)
+                  
+                  return (
+                    <NavDropdown.Item key={b?.id} disabled={disabledItem} onClick={() => handleSelectBoard(b?.id, b?.url, b?.name)}>{b.name}</NavDropdown.Item>
+                  )
+                })
+
+                }
+            </NavDropdown>
+            : null  
+          }
         </Nav>
         <Nav className="mr-auto">
           <Navbar.Brand className="navigation-logo" onClick={ () => history.push('/') }>
             <img width="80" src={trelloLogo} alt="Trello Logo" draggable={false} />
           </Navbar.Brand>
         </Nav>
-        <Nav className="mr-auto">
+        <Nav>
           <DropdownButton id="dropdown-item-button" className="navigation-dropdown" menuAlign="right" title={state?.initials || 'Account'}>
             <Dropdown.Header className="navigation-dropdown-header">
               {state?.fullName}

@@ -57,10 +57,6 @@ const singleCardEndpoint = (idCard, idList, payload) => {
     createCard: `/cards?key=${API_KEY}&token=${SERVER_TOKEN}&idList=${idList}`, // post
     deleteCard: `/cards/${idCard}?key=${API_KEY}&token=${SERVER_TOKEN}`, // delete
     moveCardToList: `/cards/${idCard}?key=${API_KEY}&token=${SERVER_TOKEN}` // put
-    // moveCardToList: `/cards/${idCard}/${idList}?key=${API_KEY}&token=${SERVER_TOKEN}&value=${payload}`, // put
-    // moveCardToList: `/cards/${idCard}/idList=${idList}&key=${API_KEY}&token=${SERVER_TOKEN}`, // put
-    // moveCardToList: `/cards/${idCard}/actions?filter=updateCard:${idList}&key=${API_KEY}&token=${SERVER_TOKEN}`
-    // https://api.trello.com/1/lists/{id}/idBoard?key=0471642aefef5fa1fa76530ce1ba4c85&token=9eb76d9a9d02b8dd40c2f3e5df18556c831d4d1fadbe2c45f8310e6c93b5c548&value=5abbe4b7ddc1b351ef961414
   }
 }
 

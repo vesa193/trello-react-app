@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Form, Button, Row, Col, Dropdown } from 'react-bootstrap';
-import { IoTrashBinOutline, IoArrowForwardOutline, IoArrowBackSharp } from 'react-icons/io5';
+import { IoTrashBinOutline, IoArrowForwardOutline, IoArrowBackSharp, IoEllipsisHorizontal } from 'react-icons/io5';
 import { deleteCard, moveCard, updateCard } from '../../pages/HomePage/action';
 import './cardOfList.scss'
 
@@ -128,6 +128,10 @@ const CardOfList = ({ boardCards, list }) => {
                         <Dropdown.Item eventKey="3" onClick={ () => setMoveClicked(true)}>
                           Move
                           <IoArrowForwardOutline size={15} />
+                        </Dropdown.Item>
+                        <Dropdown.Item eventKey="3" onClick={ () => setMoveClicked(true)}>
+                          View details
+                          <IoEllipsisHorizontal size={15} />
                         </Dropdown.Item>
                         <Dropdown.Item eventKey="2" onClick={() => handleDeleteCard(card.id, idBoard)}>
                           Delete

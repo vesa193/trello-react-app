@@ -8,8 +8,10 @@
 }
 
 .content-placeholder {
+  position: relative;
   flex: 1 1 auto;
   background-size: cover;
+  background-position: center;
   overflow-y: auto;
 
   .boards-wrapper {

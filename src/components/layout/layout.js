@@ -4,10 +4,11 @@ import Spinner from '../spinner/spinner';
 import Navigation from '../navigation/navigation';
 import './layout.scss'
 
-const Layout = ({ children, background, contentClassName }) => {
+const Layout = ({ children, background, notFoundBackgroud, contentClassName }) => {
   const history = useHistory()
   const style1 = { backgroundColor: `var(--${background})`, backgroundImage: `url(${background})` }
-  const style2 = { backgroundColor: '' }
+  const styleNotFound = { backgroundColor: notFoundBackgroud }
+  const style2 = { backgroundColor: '' || styleNotFound }
   const style = !background?.length && !history.location.pathname.includes('board/') ? style2 : style1
 
   return (

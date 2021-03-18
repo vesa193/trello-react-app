@@ -6,6 +6,7 @@ import SingleBoardPage from './pages/SingleBoardPage/SingleBoardPage';
 import { getBoards } from './pages/HomePage/action';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.scss';
+import NotFound from './pages/NotFound/NotFound';
 
 function App() {
   const dispatch = useDispatch()
@@ -22,6 +23,7 @@ function App() {
         <Switch>
           <Route path="/" exact component={HomePage} />
           <Route path="/board/:boardName" component={SingleBoardPage} />
+          <Route path="*" component={NotFound} />
         </Switch>
       </Router>
     </main>
