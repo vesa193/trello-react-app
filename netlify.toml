@@ -2,3 +2,7 @@
   from = "/*"
   to = "/index.html"
   status = 200
+
+[context.production.environment]
+  TOML_ENV_VAR = "From netlify.toml"
+  REACT_APP_TOML_ENV_VAR = "From netlify.toml (REACT_APP_)"
